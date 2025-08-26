@@ -1,0 +1,34 @@
+package Primer_Diagrama;
+
+import java.util.*;
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+  
+        //NA= Numero automatico 
+        int NA = 4;
+        
+        
+          Scanner sc = new Scanner(System.in);
+          
+          
+          //NU= Numero Usuario
+        for (int NU = 1; NU>0; NU++) {
+            
+            System.out.println("Ingrese un numero del 1-5");
+            NU=sc.nextInt();
+            
+            if (NU==NA){
+                System.out.println("Felicitaciones");
+                break;
+            }else {
+                System.out.println("Intente de nuevo");
+                
+            }    
+        }
+           
+    }
+    
+}
