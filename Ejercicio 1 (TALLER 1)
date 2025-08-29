@@ -1,0 +1,36 @@
+package pkg1_taller_pruebas_2;
+
+//Ejercicio 1
+
+import java.util.Arrays; // Importa la clase Arrays para mostrar los arrays
+
+    
+  public class Main {
+    
+    public static void main(String[] args) {
+        //Arreglo Ordenado
+        int[] AO = {1, 3, 6, 9, 12};
+        //Arreglo Desordenado
+        int[] AD = {1, 3, 9, 6, 8, 2};
+        
+        System.out.println("Primer arreglo: "+ Arrays.toString(AO));
+        System.out.println("Segundo arreglo: "+ Arrays.toString(AD));
+        
+        System.out.println("¿El primer arreglo esta ordenado? " + Ascendente(AO));
+        System.out.println("¿El segundo arreglo esta ordenado? " + Ascendente(AD));
+    }
+    
+    
+    public static boolean Ascendente(int[] numeros) {
+        
+        for (int i = 0; i < numeros.length - 1; i++) {
+            
+            if (numeros[i] > numeros[i + 1]) {
+                return false; 
+            }
+        }
+       
+        return true;
+    }
+}
+    
