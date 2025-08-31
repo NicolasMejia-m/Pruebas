@@ -1,0 +1,64 @@
+package pkg1_taller_pruebas_2;
+
+import java.util.*;
+
+//Ejercicio 3
+
+public class Main {
+    
+   
+     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String contraseña;
+        boolean valida = false;
+        
+        // Solicita contraseña
+        while (!valida) {
+            System.out.println("Digite la contraseña: (Minimo: 8 caracteres, una mayuscula, una minuscula, un numero, un caracter especial: !@#$%^&*)");
+            contraseña = sc.nextLine();
+            
+            if (ContraseñaSegura(contraseña)) {
+                System.out.println("Su contraseña es segura");
+                valida = true; // salir
+            } else {
+                System.out.println("La contraseña no cumple con los requisitos. Intente de nuevo.");
+            }
+        }
+        
+        
+    }
+    
+    
+    public static boolean ContraseñaSegura(String contraseña) {
+        
+        // menor a 8 caracteres devuelve
+        if (contraseña.length() < 8) {
+            return false;
+        }
+
+        boolean Mayuscula = false;
+        boolean Minuscula = false;
+        boolean Numero = false;
+        boolean Especial = false;
+
+        // Verifica caracteres
+        String caracteresEspeciales = "!@#$%^&*";
+        for (char c : contraseña.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                Mayuscula = true;
+            } else if (Character.isLowerCase(c)) {
+                Minuscula = true;
+            } else if (Character.isDigit(c)) {
+                Numero = true;
+            } else if (caracteresEspeciales.indexOf(c) >= 0) {
+                Especial = true;
+            }
+        }
+        
+        // true si todo se cumple
+        return Mayuscula && Minuscula && Numero && Especial;
+    }
+    
+   
+}
+  
