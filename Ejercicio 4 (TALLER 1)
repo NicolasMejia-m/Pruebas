@@ -1,0 +1,39 @@
+package pkg1_taller_pruebas_2;
+
+//Ejercicio 4
+
+public class Main {
+
+    public static void main(String[] args) {
+        String texto = "Programacion 123";
+        VocalesConsonantes(texto); 
+    }
+
+    public static void VocalesConsonantes(String cadena) {
+        int contadorVocales = 0;
+        int contadorConsonantes = 0;
+        
+        // recorre
+        for (int i = 0; i < cadena.length(); i++) {
+            char caracter = cadena.charAt(i); // carácter actual
+            
+            // Convierte a minúscula
+            caracter = Character.toLowerCase(caracter);
+            
+            // contar vocales y consonantes
+            if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u') {
+                contadorVocales++;
+            } else if (caracter >= 'a' && caracter <= 'z') {
+                contadorConsonantes++;
+            }
+        }
+        
+        
+        System.out.println("La cadena '" + cadena + "' tiene:");
+        System.out.println("Vocales: " + contadorVocales);
+        System.out.println("Consonantes: " + contadorConsonantes);
+    }
+}
+  
+
+    
