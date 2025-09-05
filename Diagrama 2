@@ -1,0 +1,55 @@
+package juegoadinanza;
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class JuegoAdinanza {
+
+
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+        Random rnd = new Random(); // lo utilizamos para generar numeros aleatorio
+// menu
+        System.out.println(" Adivina el numero ");
+        System.out.println("Elige dificultad:");
+        System.out.println("1. D1 (1 a 3)");
+        System.out.println("2. D2 (1 a 5)");
+        System.out.println("3. D3 (1 a 10)");
+        System.out.print("Opcion: ");
+
+        int opcion = sc.nextInt(); // se guarda la opcion elegida por el usuario 
+        int max = 0; // se utiliza para guardar el rango maximo del numero secreto 
+
+// se asginda el maximo dependiendo de la opcion elegida 
+        if (opcion == 1) {
+            max = 3;
+        } else if (opcion == 2) {
+            max = 5;
+        } else if (opcion == 3) {
+            max = 10;
+        } else {
+            System.out.println("Opcion no valida, se usara D1 por defecto.");
+            max = 5;
+        }
+// generamos el numero secreto entre el 1 y la dificultad elegida 
+        int secreto = rnd.nextInt(max) + 1;
+        int intento = 0; // aqui guardamos el numero que el usuario digita 
+// inicio del juego 
+        System.out.println("Se ha generado un numero entre 1 y " + max + " Adivinalo");
+// si el numero no es igual  a la variable secreto, se repite
+        while (intento != secreto) {
+            System.out.print("Tu numero: ");
+            intento = sc.nextInt();// lee el numero que digita el usuario 
+// verificador si se adivina 
+            if (intento == secreto) {
+                System.out.println("Felicitaciones Adivinaste! " + secreto);
+            } else {
+                System.out.println("Incorrecto, intenta de nuevo.");
+            }
+        }
+
+
+    }
+}
+ 
